@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>id/class 선택자로 표 꾸미기</title>
+   <!-- Internal styling -->
+   <style>
+      /* CSS rules */
+      /* Styling for the table header cells */
+      #tab th {
+         background-color: lightblue;
+         color: white;
+      }
+      /* Styling for cells with IDs */
+      #id {
+         width: 100px;
+      }
+      #name {
+         width: 150px;
+      }
+      #major {
+         width: 120px;
+      }
+      #email {
+         width: 200px;
+      }
+   </style>
+</head>
+<body>
+   <!-- Table with student information -->
+   <table border="1" id="tab">
+      <tr> <!-- Table header row -->
+         <th id="id">학번</th> <!-- Header cell for student ID -->
+         <th id="name">이름</th> <!-- Header cell for student name -->
+         <th id="major">학과</th> <!-- Header cell for student major -->
+         <th id="email">이메일</th> <!-- Header cell for student email -->
+      </tr>
+      <tr> <!-- First row with student data -->
+         <td>20240401</td>
+         <td>홍길동</td>
+         <td>체육학과</td>
+         <td>gildong@naver.com</td>
+      </tr>
+      <!-- Other rows with student data -->
+   </table>
+</body>
+</html>

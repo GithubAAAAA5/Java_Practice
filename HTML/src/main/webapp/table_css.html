@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<!-- 태그에 CSS 적용방법 3가지 
+		1. 태그에 직접 지정하는 방법 : style 속성
+		2. head 에 style 을 지정하는 방법 : <style> 태그를 사용한다.
+		3. 외부 CSS 파일을 지정 하는 방법 : link 태그로 외부 CSS 파일을 지정한다. => 연결한 모든 페이지 적용
+		-->
+	<head>
+		<meta charset="UTF-8">
+		<title>id/class 선택자로 표 꾸미기</title>
+		<style type="text/css">
+			
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+		<table border="1" id="tab">
+			<tr>	<!-- 1행 - 표헤더, 항목(제목) -->
+				<th id="id">학번</th>			<!-- th 제목열 -->
+				<th id="name">이름</th>
+				<th id="major">학과</th>
+				<th id="email">이메일</th>
+			</tr>
+			<tr>	<!-- 2행 -->
+				<td>20240401</td>			<!-- th 제목열 -->
+				<td>홍길동</td>
+				<td>체육학과</td>
+				<td style="font-weight : bolder; font-size : 20px;">gildong@naver.com</td>
+			</tr>
+			<tr class="odd">	<!-- 3행 -->
+				<td>20240402</td>			<!-- th 제목열 -->
+				<td>임꺽정</td>
+				<td>사회학과</td>
+				<td style="font-size : 20px;">Lim@yahoo.co.kr</td>
+			</tr>
+			<tr>	<!-- 4행 -->
+				<td>20240403</td>			<!-- th 제목열 -->
+				<td>이순신</td>
+				<td>해양학과</td>
+				<td>soonsin@gmail.com</td>
+			</tr>
+			<tr class="odd">	<!-- 5행 -->
+				<td>20240404</td>			<!-- th 제목열 -->
+				<td>김좌진</td>
+				<td>역사학과</td>
+				<td>kim@hanmail.com</td>
+			</tr>
+		</table>
+	<body>
+	
+	</body>
+</html>
