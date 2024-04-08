@@ -13,10 +13,9 @@
 		<title>req_get_result.jsp</title>
 	</head>
 	<body>
-		이름 :
-		<%=name %>
-		<br> 숫자 :
-		<%=number %>
+		이름 : <%=name %>
+		<br> 
+		숫자 : <%=number %>
 	
 	</body>
 
