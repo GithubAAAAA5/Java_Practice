@@ -4,9 +4,9 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>res_login_ok.jsp</title>
+		<title>login_welcome.jsp</title>
 	</head>
 	<body>
-		
+		<h2>로그인 성공</h2>
 	</body>
 </html>
