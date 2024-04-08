@@ -4,14 +4,15 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>req_quiz_result.jsp</title>
+		<title>req_quiz01_result.jsp</title>
 	</head>
 	<body>
-		<form action="req_quiz_result.jsp" method="post">
+	<!--
+		<form action="req_quiz01_result.jsp" method="post">
 	<%--
 	  1. form태그를 이용해서 post형식으로 이름, 키와 몸무게를 입력받음
 	  
-      2. req_quiz_result.jsp로 전송
+      2. req_quiz01_result.jsp로 전송
       
       3. 해당 페이지 에서는 넘어간 값을 BMI지수를 처리
       
@@ -30,5 +31,13 @@
     
 		<input type="submit" value="가입"> <br>
 		</form>
+	-->  
+		<form action="req_quiz01_result.jsp" method="post">
+      	이름 : 	<input type="text" size="10" name="name"> <br>
+      	키 : 	<input type="text" size="10" name="height"><br>
+      	몸무게 :	<input type="text" size="10" name="weight"><br>
+      	<input type="submit" value="제출"><br>
+	
+      	</form>
 	</body>
 </html>
