@@ -7,8 +7,6 @@
  	 해당 값을 얻어 id 안에 미리 값을 가지게 작성하는 코드.
  	*/
  
- 
- 
  	Cookie[] cooks = request.getCookies();
  	String id = "";
  	if (cooks != null) {	// 쿠키가 null이 아니면 실행
@@ -20,7 +18,6 @@
  	}
  	
  %>   
-    
     
     
 <!DOCTYPE html>
