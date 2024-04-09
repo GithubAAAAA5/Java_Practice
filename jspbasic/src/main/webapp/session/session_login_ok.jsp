@@ -24,7 +24,45 @@
 		response.sendRedirect("session_welcome.jsp");
 		
 	} else {
-		response.sendRedirect("session_login.jsp");	
+		// response.sendRedirect("session_login.jsp");	
+		
+		// 자바스크립트 : 변수 선언
+		
+		
+		%>
+		<script>
+			/*
+				자바스크립트 변수 선언 / var 는 변수를 자동으로 설정해줌
+			*/
+//			var a = 1;
+//			var b = "1";
+//			
+//			let c = 1; 	// ES6 방식
+//			const d = "1";		//자바에서 finall 과 같다 한번 설정한 값은 바뀌지 않는다.
+			
+			/* 자바 스크립트 함수 */
+//			function 함수이름 (매개변수) {
+//				함수 실행문들
+//			}
+			
+//			이름 = () => {}	//es6방식
+			
+//			제어 : for, if, switch, while, try
+			
+			//자바 스크립트에서 자주 사용되는 내장 객체
+//			alert(); 경고창
+//			confirm(); 확인창
+//			history.go(-1): 뒤로 가기		// 간단히 표현하자면 인터넷을 사용할때 뒤로가기 앞으로가기 할때 남아있는 이전 페이지 정보라고 생각하면 ok
+//			location.href = "경로"; 리다이렉트
+			check(); 		// 함수의 호출, 선언되면 앞 뒤 어디든 사용 가능
+			
+			function check() {
+				alter("로그인 실패했습니다."); //경고창
+				history.go(-1); //뒤로 가기
+			}
+			
+		</script>
+	<%		
 	} 
 	
 %>    

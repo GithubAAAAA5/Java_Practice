@@ -23,4 +23,19 @@
   </servlet-mapping>
   <!--  testservlet2 에서 testservlet2를 주석처리 하였고 servletmapping으로 url 을 orange로 만들어 줬기때문에  http://localhost:8080/jspbasic/orange 로 결과값이 출력된다.-->
 
+<!-- 에러 처리 -->
+<!-- 
+<error-page>
+	<error-code>404</error-code>
+	<location>/errorpage/error_view.jsp</location>
+</error-page>
+<error-page>
+	<error-code>500</error-code>
+	<location>/errorpage/error_view.jsp</location>
+</error-page>
+<error-page>
+	<exception-type>java.lang.NullPointerException</exception-type>
+	<location>/errorpage/error_view.jsp</location>
+</error-page>	
+	-->
 </web-app>

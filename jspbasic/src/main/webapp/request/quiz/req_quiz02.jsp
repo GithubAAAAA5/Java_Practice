@@ -11,10 +11,12 @@
 		<%
 			for(int stn=1; stn<=30; stn++) {
 		%>		
-			<a href="./StudentNum.jsp?stn=<%=stn%>"><%=stn %>번 학생</a><br>
+			<a href="./StudentNum.jsp?stn=<%=stn%>">
+			<%=stn %>번 학생
+			</a><br>
 		<%
-		//if((i%10)==0)
-			// out.println("<br>"))
+		if((stn % 10)==0)
+			 out.println("<br>");
 			}
 		%>
 	</body>
