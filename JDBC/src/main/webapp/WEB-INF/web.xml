@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" version="5.0">
+  <servlet>
+    <description></description>
+    <display-name>joinOk</display-name>
+    <servlet-name>joinOk</servlet-name>
+    <servlet-class>com.jdbc.ok.joinOk</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>joinOk</servlet-name>
+    <url-pattern>/joinOk</url-pattern>
+  </servlet-mapping>
+  <display-name>JDBC</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>JoinOk</display-name>
+    <servlet-name>JoinOk</servlet-name>
+    <servlet-class>com.jdbc.ok.JoinOk</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JoinOk</servlet-name>
+    <url-pattern>/JoinOk</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Joinok</display-name>
+    <servlet-name>Joinok</servlet-name>
+    <servlet-class>com.jdbc.ok.Joinok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Joinok</servlet-name>
+    <url-pattern>/Joinok</url-pattern>
+  </servlet-mapping>
+</web-app>
