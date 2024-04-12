@@ -35,9 +35,9 @@
 		<a href="logout.jsp">로그아웃</a>
 		
 		<!-- 객체를 불러와서 수정 update.jsp 를 사용해서 수정 값을 보여주고 수정하고 수정완료된 내용을 update ok 로 수정완료후 mypage로 이동 -->
-		<a href="modify_ok.jsp">정보수정</a>	
+		<a href="ModifyOk">정보수정</a>	
 		
 		<!-- 정보의 삭제 / 삭제하기 전 보안을 위해 정보를 확인하는 절차를 가짐 -->
-		<a href="delete_ok.jsp">회원탈퇴</a>
+		<a href="delete_ok">회원탈퇴</a>
 	</body>
 </html>

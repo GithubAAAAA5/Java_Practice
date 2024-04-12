@@ -82,7 +82,9 @@ public class UserVO {
 		return "UserVo [id=" + id + ", pw=" + pw + ", name=" + name + ", phone1=" + phone1 + ", phone2=" + phone2
 				+ ", gender=" + gender + "]";
 	}
-	
+
+
+
 
 	
 	
