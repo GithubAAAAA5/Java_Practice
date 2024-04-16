@@ -1,5 +1,13 @@
+<%@page import="com.myweb.util.PageVO"%>
+<%@page import="com.myweb.board.model.BoardVO"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	ArrayList<BoardVO> list = (ArrayList<BoardVO>)request.getAttribute("list");
+	
+%>    
+    
 <!DOCTYPE html>
 <html>
 	<head>
@@ -48,89 +56,34 @@
 					<th>조회수</th>
 				</tr>
 			</thead>
+
 			<tbody>
+				<%for(BoardVO vo : list) { %>
 				<tr>
-					<td>10</td>
-					<td>testuser</td>
-					<td>title10</td>
-					<td>2024.04.15</td>
-					<td>1</td>
+					<td><%=vo.getNum() %></td>
+					<td><%=vo.getWriter() %></td>
+					<td>
+						<a href="content.board?num=<%=vo.getNum() %>"><%=vo.getTitle() %>
+					</td>
+					<td><%=vo.getRegdate() %></td>
+					<td><%=vo.getHit() %></td>
 				</tr>
-				<tr>
-					<td>9</td>
-					<td>testuser</td>
-					<td>title9</td>
-					<td>2024.04.15</td>
-					<td>1</td>
-				</tr>
-				<tr>
-					<td>8</td>
-					<td>testuser</td>
-					<td>title8</td>
-					<td>2024.04.15</td>
-					<td>1</td>
-				</tr>
-				<tr>
-					<td>7</td>
-					<td>testuser</td>
-					<td>title7</td>
-					<td>2024.04.15</td>
-					<td>1</td>
-				</tr>
-				<tr>
-					<td>6</td>
-					<td>testuser</td>
-					<td>title6</td>
-					<td>2024.04.15</td>
-					<td>1</td>
-				</tr>
-				<tr>
-					<td>5</td>
-					<td>testuser</td>
-					<td>title5</td>
-					<td>2024.04.15</td>
-					<td>1</td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td>testuser</td>
-					<td>title4</td>
-					<td>2024.04.15</td>
-					<td>1</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>testuser</td>
-					<td>title3</td>
-					<td>2024.04.15</td>
-					<td>1</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>testuser</td>
-					<td>title2</td>
-					<td>2024.04.15</td>
-					<td>1</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>testuser</td>
-					<td>title1</td>
-					<td>2024.04.15</td>
-					<td>1</td>
-				</tr>
+				<%} %>
 			</tbody>
 		</table>
+		<% PageVO pageVO = (PageVO)request.getAttribute("pageVO"); %>
 		
 		<div align="center">
 			<ul class="pagination pagination-sm">
-				<li><a href="">이전</a>
-				<li><a href="">1</a>
-				<li><a href="">다음</a>
+				<li><a href="">이전</a></li>
+				<% for(int i = pageVO.getStartPage(); i <= pageVO.getEndPage(); i++){ %>
+				<li><a href="list.board?pageNum=<%=i %>"><%=i %></a></li>
+				<%} %>
+				<li><a href="">다음</a></li>
 			</ul>
 		</div>
 	</div>
-    
+
     <!-- footer 영역 -->
   	<%@ include file="../include/footer.jsp" %>
   	

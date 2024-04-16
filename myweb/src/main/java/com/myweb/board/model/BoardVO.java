@@ -1,6 +1,6 @@
 package com.myweb.board.model;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 public class BoardVO {
 	
