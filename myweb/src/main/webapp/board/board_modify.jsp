@@ -41,7 +41,7 @@
 			
 				<%-- BoardVO vo = (BoardVO)request.getAttribute("vo"); --%>
 			
-				<form name="regform" action="update.board" method="post">
+				<form name="regform" action="update.board?pageNum=${param.pageNum }" method="post">
 					<h2>게시판 글 수정 페이지</h2>
 					<hr>
 					<table border="1" style="width:500px">

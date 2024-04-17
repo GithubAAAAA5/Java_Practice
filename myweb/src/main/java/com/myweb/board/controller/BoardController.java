@@ -102,7 +102,8 @@ public class BoardController extends HttpServlet {
 			//public class UpdateServiceImpl 로 이동
 			
 			String num = request.getParameter("num");	//  번호를 받아와
-			response.sendRedirect("content.board?num=" + num);
+			String pageNum = request.getParameter("pageNum"); // 현재 페이지
+			response.sendRedirect("content.board?num=" + num + "pageNum=" + pageNum);
 		
 		} else if (command.equals("/board/delete.board")) {
 			/*
