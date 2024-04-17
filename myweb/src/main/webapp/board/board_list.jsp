@@ -48,7 +48,9 @@
 		</div>
 		
 		<table class="table table-bordered">
+		
 			<thead>
+			
 				<tr>	
 					<th>글 번호</th>
 					<th>작성자</th>
@@ -56,9 +58,11 @@
 					<th>날짜</th>
 					<th>조회수</th>
 				</tr>
+				
 			</thead>
 
 			<tbody>
+			
 				<c:forEach var="vo" items="${list }">
 				<%--for(BoardVO vo : list) { --%>
 				
@@ -78,20 +82,25 @@
 				<%-- } --%>
 				
 			</tbody>
+			
 		</table>
+		
 		<%-- PageVO pageVO = (PageVO)request.getAttribute("pageVO"); --%>
 		
 		<div align="center">
 			<ul class="pagination pagination-sm">
+			
 				<!-- 2. 이전 버튼 활성화 여부 -->
+				<c:if test="${pageVO.prev }">
 				<li><a href="list.board?pageNum=${pageVO.startPage - 1 }">이전</a></li>
+				</c:if>
 				
-				<!-- 1. 페이징 번호 처리... -->
+				<!-- 1. 페이징 번호 처리... --> <!-- 현 지식으로 따라갈수없음 추가 공부 -->
 				<c:forEach var="num" begin="${pageVO.startPage }" end="${pageVO.endPage}">
 				<%-- for(int i = pageVO.getStartPage(); i <= pageVO.getEndPage(); i++){ --%>
 				
 				
-				<li class="${num == pageVO.pageNum ? 'active':'' }">	<!-- 현 지식으로 따라갈수없음 추가 공부 -->
+				<li class="${num == pageVO.pageNum ? 'active':'' }">	
 					<a href="list.board?pageNum=${num}">${num}</a> <%--=i %>"><%=i --%>
 				</li>	
 				
@@ -99,7 +108,10 @@
 				<%--} --%>
 				
 				<!-- 2. 다음 버튼 활성화 여부 -->
+				<c:if test="${pageVO.next }">
 				<li><a href="list.board?pageNum=${pageVO.endPage + 1 }">다음</a></li>
+				</c:if>
+				
 			</ul>
 		</div>
 	</div>
