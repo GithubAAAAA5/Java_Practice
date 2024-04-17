@@ -20,7 +20,7 @@
 		결과 : <%=sum %>
 	--%>	
 		
-	<!-- jstl의 변수 선언 : <c:set> -->	
+	<%-- jstl의 변수 선언 : <c:set> --%>	
 	<c:set var="sum" value="0" />
 	
 	<c:forEach var="i" begin="1" end="100" step="1">
