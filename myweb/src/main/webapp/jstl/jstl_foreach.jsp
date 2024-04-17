@@ -30,5 +30,36 @@
 	<!-- 변수 출력 -->
 	결과 : <c:out value="${sum }" />
 	
+	
+	<hr>
+	<h2>구구단 3단 출력</h2>
+	<c:forEach var="i" begin="1" end="9" step="1">
+		3 X ${i } = ${3*i}<br>
+	</c:forEach>
+	
+	<hr>
+	<h2>모든 구구단 출력</h2>
+	<c:forEach var="i" begin="1" end="9" step="1">
+			<hr><h3>${i }단 출력</h3>
+		<c:forEach var="j" begin="1" end="9" step="1">
+			${i } X ${j } = ${i*j }<br>
+		</c:forEach>
+	</c:forEach>
+	
+	<hr>
+	<h2>향상된 for 문</h2>
+	<%
+		int[] arr = {1,2,3,4,5,6};
+		for (int a :arr) {
+			out.println(a);
+		}
+	%>
+	
+	<br>
+	<c:set var="arr2" value="<%=new int[] {10, 20, 30, 40, 50, 60} %>" />
+	<h3>jstl 을 이용한 향상된 for 문 출력하기</h3>
+	<c:forEach var="i" items="${arr2 }">
+		${i }
+	</c:forEach>
 	</body>
 </html>
