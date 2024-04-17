@@ -8,10 +8,29 @@
 		<title>jstl_if.jsp</title>
 	</head>
 	<body>
-		<C:if test="true">
+		<c:if test="true">
 			무조건 실행되는 문장
-		</C:if>
+		</c:if>
 		<hr>
 		
+		<c:if test="${param.name eq '홍길동' }">
+			홍길동 입니다.
+		</c:if>
+		
+		<c:if test="${param.name == '이순신' }">
+			이순신 입니다.
+		</c:if>
+			
+		<%--
+			age값이 20 이상이면 성인입니다.
+					20 미만이면 미성년입니다. 출력
+		 --%>
+		 <c:if test="${param.age >= 20 }">
+		 	성인입니다.
+		 </c:if>
+		 <c:if test="${param.age < 20 }">
+		 	미성년입니다.
+		 </c:if>
+		 
 	</body>
 </html>
