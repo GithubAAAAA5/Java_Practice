@@ -43,6 +43,7 @@
 				<%-- BoardVO vo = (BoardVO)request.getAttribute("vo"); --%>
 				
 					<table border="1" style="width:500px">
+					
 						<tr>
 							<td style="width:20%">글번호</td>
 							<td style="width:30%">${vo.num}<%--=vo.getNum() --%></td>
@@ -66,13 +67,14 @@
 					
 						<tr>
 							<td colspan="4" align="center">
-								<input type="button" value="목록" onclick="location.href='list.board'">
-								<input type="button" value="목록2" onclick="location.href='list.board?pageNum=${pageVO.pageNum - 1}'">
+								<%--<input type="button" value="목록" onclick="location.href='list.board'">--%>
+								<input type="button" value="목록" onclick="location.href='list.board?pageNum=${param.pageNum}'">
 								
 								<%-- <input type="button" value="수정" onclick="location.href='modify.board?num=<%=vo.getNum()%>'"> --%>
-								<input type="button" value="수정" onclick="location.href='modify.board?num=%{vo.num}'">
+								<input type="button" value="수정" onclick="location.href='modify.board?num=${vo.num}&pageNum=${param.pageNum}'">
 							</td>
 						</tr>
+						
 						</table>
 		
 				</form>

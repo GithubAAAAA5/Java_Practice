@@ -71,7 +71,8 @@
 					<td>${vo.writer}<%--=vo.getWriter() --%></td>
 					
 					<td>
-						<a href="content.board?num=${vo.num}">${vo.title}</a><%--=vo.getNum() %>"><%=vo.getTitle() --%>
+						<a href="content.board?num=${vo.num}&pageNum=${pageVO.pageNum}">${vo.title}</a><%--=vo.getNum() %>"><%=vo.getTitle() --%>
+													<!-- 페이지 값을 유지한다..... -->				
 					</td>
 					
 					<td>${vo.regdate}<%--=vo.getRegdate() --%></td>

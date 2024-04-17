@@ -1,6 +1,7 @@
 <%@page import="com.myweb.board.model.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 	<head>
@@ -37,32 +38,34 @@
 		
 		<section>
 			<div align="center">
-				<% BoardVO vo = (BoardVO)request.getAttribute("vo"); %>
+			
+				<%-- BoardVO vo = (BoardVO)request.getAttribute("vo"); --%>
+			
 				<form name="regform" action="update.board" method="post">
 					<h2>게시판 글 수정 페이지</h2>
 					<hr>
 					<table border="1" style="width:500px">
 						<tr>
 							<td>글번호</td>
-							<td><input type="text" name="num" value="<%=vo.getNum() %>" readonly></td>
+							<td><input type="text" name="num" value="${vo.num}"<%--=vo.getNum() --%> readonly></td>
 						</tr>
 						<tr>
 							<td>작성자</td>
-							<td><input type="text" name="writer" value="<%=vo.getWriter() %>" readonly></td>
+							<td><input type="text" name="writer" value="${vo.writer}"<%--=vo.getWriter() --%> readonly></td>
 						</tr>
 						<tr>
 							<td>글제목</td>
-							<td><input type="text" name="title" value="<%=vo.getTitle() %>"></td>
+							<td><input type="text" name="title" value="${vo.title}"<%--=vo.getTitle() --%>></td>
 						</tr>
 						<tr>
 							<td>글내용</td>
-							<td><textarea name="content" rows="10" style="width:100%"><%=vo.getContent() %></textarea></td>
+							<td><textarea name="content" rows="10" style="width:100%">${vo.content}<%--=vo.getContent() --%></textarea></td>
 						</tr>
 						<tr>
 							<td colspan="2" align="center">
 								<input type="button" value="수정하기" onclick="modifyCheck()">
-								<input type="button" value="목록" onclick="location.href='list.board'">
-								<input type="button" value="삭제하기" onclick="location.href='delete.board?num=<%=vo.getNum() %>'"> <!-- 삭제하려면 게시글 번호가 잇어야 하니까 getnum으로 넘겨주는거 -->
+								<input type="button" value="목록" onclick="location.href='list.board?pageNum=${param.pageNum }'">
+								<input type="button" value="삭제하기" onclick="location.href='delete.board?num=${vo.num}'"><%--=vo.getNum() --%><!-- 삭제하려면 게시글 번호가 잇어야 하니까 getnum으로 넘겨주는거 -->
 							</td>
 						</tr>
 						</table>

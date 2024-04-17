@@ -28,7 +28,7 @@ public class GetListServiceimpl implements IBoardService {
 		
 		Criteria cri = new Criteria();
 		
-		if(request.getParameter("pageNum")!= null) {
+		if(request.getParameter("pageNum")!= null ) {
 			String pageNum = request.getParameter("pageNum");
 			cri.setPageNum(Integer.parseInt(pageNum));
 		}
