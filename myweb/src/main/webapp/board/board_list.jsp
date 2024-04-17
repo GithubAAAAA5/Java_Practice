@@ -3,6 +3,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%
 	ArrayList<BoardVO> list = (ArrayList<BoardVO>)request.getAttribute("list");
 	
@@ -58,28 +59,47 @@
 			</thead>
 
 			<tbody>
-				<%for(BoardVO vo : list) { %>
+				<c:forEach var="vo" items="${list }">
+				<%--for(BoardVO vo : list) { --%>
+				
 				<tr>
-					<td><%=vo.getNum() %></td>
-					<td><%=vo.getWriter() %></td>
+					<td>${vo.num}<%--=vo.getNum() --%></td>
+					<td>${vo.writer}<%--=vo.getWriter() --%></td>
+					
 					<td>
-						<a href="content.board?num=<%=vo.getNum() %>"><%=vo.getTitle() %>
+						<a href="content.board?num=${vo.num}">${vo.title}</a><%--=vo.getNum() %>"><%=vo.getTitle() --%>
 					</td>
-					<td><%=vo.getRegdate() %></td>
-					<td><%=vo.getHit() %></td>
+					
+					<td>${vo.regdate}<%--=vo.getRegdate() --%></td>
+					<td>${vo.hit}<%--=vo.getHit() --%></td>
 				</tr>
-				<%} %>
+				
+				</c:forEach>
+				<%-- } --%>
+				
 			</tbody>
 		</table>
-		<% PageVO pageVO = (PageVO)request.getAttribute("pageVO"); %>
+		<%-- PageVO pageVO = (PageVO)request.getAttribute("pageVO"); --%>
 		
 		<div align="center">
 			<ul class="pagination pagination-sm">
-				<li><a href="">이전</a></li>
-				<% for(int i = pageVO.getStartPage(); i <= pageVO.getEndPage(); i++){ %>
-				<li><a href="list.board?pageNum=<%=i %>"><%=i %></a></li>
-				<%} %>
-				<li><a href="">다음</a></li>
+				<!-- 2. 이전 버튼 활성화 여부 -->
+				<li><a href="list.board?pageNum=${pageVO.startPage - 1 }">이전</a></li>
+				
+				<!-- 1. 페이징 번호 처리... -->
+				<c:forEach var="num" begin="${pageVO.startPage }" end="${pageVO.endPage}">
+				<%-- for(int i = pageVO.getStartPage(); i <= pageVO.getEndPage(); i++){ --%>
+				
+				
+				<li class="${num == pageVO.pageNum ? 'active':'' }">	<!-- 현 지식으로 따라갈수없음 추가 공부 -->
+					<a href="list.board?pageNum=${num}">${num}</a> <%--=i %>"><%=i --%>
+				</li>	
+				
+				</c:forEach>				
+				<%--} --%>
+				
+				<!-- 2. 다음 버튼 활성화 여부 -->
+				<li><a href="list.board?pageNum=${pageVO.endPage + 1 }">다음</a></li>
 			</ul>
 		</div>
 	</div>
